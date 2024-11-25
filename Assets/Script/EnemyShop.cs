@@ -6,9 +6,12 @@ public class EnemyShop : MonoBehaviour
 {
     public int cooltime = 100;      // 必殺技のクールタイム
     public int count = 0;           // クールタイムのカウンタ
+
+
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
