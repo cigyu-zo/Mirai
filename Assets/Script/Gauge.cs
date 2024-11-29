@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,21 +9,14 @@ public class Gauge : MonoBehaviour
 {
     public float maxCount = 100;
     private float pluscount;
-    public GameObject enemyshop;
-    // Start is called before the first frame update
+    public EnemyShop enemyShop;
+    public Gauge hgauge;
     void Start()
     {
-        pluscount = maxCount;
-        UpdateGauge();
+        enemyShop = GetComponent<EnemyShop>();   
     }
 
-    // Update is called once per frame
     void Update()
-    {
-
-    }
-
-    private void UpdateGauge()
     {
      
     }
