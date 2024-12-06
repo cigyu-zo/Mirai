@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class Gauge : MonoBehaviour
 {
     public EnemyShop enemyShop;
+    public GameObject parentObj;
     [SerializeField] Slider Hissatu;
-   
     float dashPoint;
     void Start()
     {
@@ -17,15 +17,16 @@ public class Gauge : MonoBehaviour
         Hissatu.maxValue = enemyShop.cooltime;
         Hissatu.value = enemyShop.cooltime;
         enemyShop =GameObject.Find("Ene_Store").GetComponent<EnemyShop>();
-        
+
+        transform.GetChild(0).gameObject.GetComponent<EnemyShop>().enabled = false;
     }
 
     void Update()
     {
         Hissatu.value = enemyShop.count;
      if(dashPoint < enemyShop.count)
-        {
-            dashPoint++;
-        }
+     {
+        dashPoint++;
+     }
     }
 }
