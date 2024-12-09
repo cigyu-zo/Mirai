@@ -3,7 +3,21 @@ guid: cedb1eb83809f6f4a92eb7cdce4f2db0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemyShop: {instanceID: 0}
+  - parentObj: {instanceID: 0}
+  - Hissatu: {instanceID: 0}
+  - UpGauge1: {fileID: 2800000, guid: 09e309c70de44a343b87353ec98bb03c, type: 3}
+  - UpGauge2: {instanceID: 0}
+  - UpGauge3: {instanceID: 0}
+  - UpGauge4: {instanceID: 0}
+  - UpGauge5: {instanceID: 0}
+  - UpGauge6: {instanceID: 0}
+  - UpGauge7: {instanceID: 0}
+  - UpGauge8: {instanceID: 0}
+  - UpGauge9: {instanceID: 0}
+  - UpGauge10: {instanceID: 0}
+  - UpGauge11: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
