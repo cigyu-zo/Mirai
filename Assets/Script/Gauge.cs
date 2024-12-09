@@ -17,8 +17,6 @@ public class Gauge : MonoBehaviour
         Hissatu.maxValue = enemyShop.cooltime;
         Hissatu.value = enemyShop.cooltime;
         enemyShop =GameObject.Find("Ene_Store").GetComponent<EnemyShop>();
-
-        transform.GetChild(0).gameObject.GetComponent<EnemyShop>().enabled = false;
     }
 
     void Update()
