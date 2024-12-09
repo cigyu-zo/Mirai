@@ -16,7 +16,7 @@ public class Gauge : MonoBehaviour
         dashPoint = enemyShop.cooltime;
         Hissatu.maxValue = enemyShop.cooltime;
         Hissatu.value = enemyShop.cooltime;
-        enemyShop =GameObject.Find("Ene_Store").GetComponent<EnemyShop>();
+        enemyShop = GameObject.Find("Ene_Store").GetComponent<EnemyShop>();
     }
 
     void Update()
