@@ -7,10 +7,11 @@ using UnityEngine.UI;
 
 public class Gauge : MonoBehaviour
 {
-    public EnemyShop enemyShop;
-    
-  
+    private GameObject parent;
 
+    
+    EnemyShop enemyShop;
+    
     [SerializeField] Texture UpGauge1;
     [SerializeField] Texture UpGauge2;
     [SerializeField] Texture UpGauge3;
@@ -29,10 +30,12 @@ public class Gauge : MonoBehaviour
     float dashPoint;
     void Start()
     {
-        dashPoint = enemyShop.cooltime;
+        parent = this.gameObject.transform.parent.gameObject;
         //Hissatu.maxValue = enemyShop.cooltime;
         //Hissatu.value = enemyShop.cooltime;
         enemyShop = GameObject.Find("Ene_Store").GetComponent<EnemyShop>();
+        dashPoint = enemyShop.cooltime;
+        
 
         //ƒ}ƒeƒŠƒAƒ‹Žæ“¾
         material = this.GetComponent<MeshRenderer>().material;
@@ -42,58 +45,59 @@ public class Gauge : MonoBehaviour
 
     void Update()
     {
-        int GaugePoint = 0;
+        float GaugePoint = 0;
 
-        Hissatu.value = enemyShop.count;
+        //Hissatu.value = enemyShop.count;
      if(dashPoint < enemyShop.count)
      {
         dashPoint++;
      }
 
-        GaugePoint = enemyShop.count / enemyShop.cooltime * 100;
-        if(GaugePoint == 0)
+     material = this.GetComponent<MeshRenderer>().material;
+        GaugePoint = (float)(enemyShop.count) / (float)(enemyShop.cooltime) * 100;
+        if (GaugePoint >= 0 && GaugePoint <= 9)
         {
             material.SetTexture("_MainTex", UpGauge1);
         }
-        else if(GaugePoint >= 1 && GaugePoint <= 9)
+        else if (GaugePoint >= 10 && GaugePoint <= 19)
         {
             material.SetTexture("_MainTex", UpGauge2);
         }
-        else if (GaugePoint >= 10 && GaugePoint <= 19)
+        else if (GaugePoint >= 20 && GaugePoint <= 29)
         {
             material.SetTexture("_MainTex", UpGauge3);
         }
-        else if (GaugePoint >= 20 && GaugePoint <= 29)
+        else if (GaugePoint >= 30 && GaugePoint <= 39)
         {
             material.SetTexture("_MainTex", UpGauge4);
         }
-        else if (GaugePoint >= 30 && GaugePoint <= 39)
+        else if (GaugePoint >= 40 && GaugePoint <= 49)
         {
             material.SetTexture("_MainTex", UpGauge5);
         }
-        else if (GaugePoint >= 40 && GaugePoint <= 49)
+        else if (GaugePoint >= 50 && GaugePoint <= 59)
         {
             material.SetTexture("_MainTex", UpGauge6);
         }
-        else if (GaugePoint >= 50 && GaugePoint <= 59)
+        else if (GaugePoint >= 60 && GaugePoint <= 69)
         {
             material.SetTexture("_MainTex", UpGauge7);
         }
-        else if (GaugePoint >= 60 && GaugePoint <= 69)
+        else if (GaugePoint >= 70 && GaugePoint <= 79)
         {
             material.SetTexture("_MainTex", UpGauge8);
         }
-        else if (GaugePoint >= 70 && GaugePoint <= 79)
+        else if (GaugePoint >= 80 && GaugePoint <= 89)
         {
             material.SetTexture("_MainTex", UpGauge9);
         }
-        else if (GaugePoint >= 80 && GaugePoint <= 89)
+        else if (GaugePoint >= 90 && GaugePoint <= 99)
         {
             material.SetTexture("_MainTex", UpGauge10);
         }
-        else if (GaugePoint >= 90 && GaugePoint <= 99)
+        else if(GaugePoint == 100)
         {
-            material.SetTexture("_MainTex", UpGauge11);
+            material.SetTexture("_MsinTex", UpGauge11);
         }
     }
 }
