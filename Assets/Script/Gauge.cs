@@ -31,9 +31,7 @@ public class Gauge : MonoBehaviour
     void Start()
     {
         parent = this.gameObject.transform.parent.gameObject;
-        //Hissatu.maxValue = enemyShop.cooltime;
-        //Hissatu.value = enemyShop.cooltime;
-        enemyShop = GameObject.Find("Ene_Store").GetComponent<EnemyShop>();
+        enemyShop = parent.GetComponent<EnemyShop>();
         dashPoint = enemyShop.cooltime;
         
 
