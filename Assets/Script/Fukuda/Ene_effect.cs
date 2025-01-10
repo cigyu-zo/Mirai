@@ -19,14 +19,13 @@ public class Ene_effect : MonoBehaviour
     }
 
     // Update is called once per frame
-    //void Update()
-    //{
-    //    if(enemyShop.cooltime == 100)
-    //    {
-    //        ParticleSystem newpaticle = Instantiate(paticle);
-    //        newpaticle.transform.position = this.transform.position;
-    //        newpaticle.Play();
-    //        Destroy(newpaticle.gameObject, 5.0f);
-    //    }
-    //}
+    void Update()
+    {
+        if (enemyShop.cooltime == 100)
+        {
+            ParticleSystem newpaticle = Instantiate(paticle);
+            newpaticle.transform.position = this.transform.position;
+            newpaticle.Play();
+        }
+    }
 }
